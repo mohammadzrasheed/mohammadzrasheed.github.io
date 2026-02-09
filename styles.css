@@ -1,0 +1,478 @@
+/* =========================
+   THEME VARIABLES
+========================= */
+:root{
+  --bg: #0b0f1a;
+  --panel: rgba(255,255,255,0.05);
+  --line: rgba(255,255,255,0.12);
+
+  --text: #eaeaff;
+  --muted: rgba(234,234,255,0.75);
+
+  --neon-purple: #7c3aed;
+  --neon-cyan: #22d3ee;
+}
+
+/* =========================
+   RESET & BASE
+========================= */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(900px 500px at 15% 10%, rgba(124,58,237,0.25), transparent 60%),
+    radial-gradient(900px 500px at 85% 15%, rgba(34,211,238,0.18), transparent 55%),
+    var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* =========================
+   GLOBAL LINKS
+========================= */
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+header{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(10px);
+  background: rgba(11,15,26,0.7);
+  border-bottom: 1px solid var(--line);
+}
+
+nav{
+  max-width: 1100px;
+  margin: auto;
+  padding: 14px 22px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+nav a{
+  color: var(--muted);
+  padding: 8px 10px;
+  border-radius: 12px;
+  transition: 0.15s ease;
+}
+
+/* Logo */
+nav a:first-child{
+  color: var(--text);
+  font-weight: 800;
+  letter-spacing: 1px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.03);
+}
+
+/* Hover glow */
+nav a:hover{
+  color: var(--text);
+  background: rgba(255,255,255,0.06);
+  box-shadow:
+    0 0 0 1px rgba(34,211,238,0.12),
+    0 0 18px rgba(34,211,238,0.12);
+}
+
+/* =========================
+   MAIN LAYOUT
+========================= */
+main,
+section{
+  max-width: 1100px;
+  margin: auto;
+  padding: 85px 22px;
+  position: relative;
+}
+
+/* =========================
+   HERO SECTION (SMALL PHOTO)
+========================= */
+main#home{
+  padding-top: 60px;
+}
+
+.hero-content{
+  display: grid;
+  grid-template-columns: 1.6fr 0.4fr; /* text > photo */
+  align-items: center;
+  gap: 20px;
+}
+
+.hero-text h1{
+  font-size: clamp(40px, 5vw, 64px);
+  line-height: 1.05;
+  margin-bottom: 10px;
+  letter-spacing: -0.5px;
+}
+
+.hero-text p{
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 70ch;
+}
+
+/* Neon underline */
+.hero-text h1::after{
+  content: "";
+  display: block;
+  width: 160px;
+  height: 3px;
+  margin-top: 14px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--neon-purple), var(--neon-cyan));
+  box-shadow:
+    0 0 18px rgba(124,58,237,0.3),
+    0 0 18px rgba(34,211,238,0.22);
+}
+
+.hero-photo{
+  display: flex;
+  justify-content: center;
+}
+
+.hero-photo img{
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.04);
+  box-shadow:
+    0 0 0 1px rgba(124,58,237,0.2),
+    0 0 18px rgba(124,58,237,0.25);
+}
+
+/* =========================
+   SECTION GLASS PANEL
+========================= */
+section{
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+section::before{
+  content:"";
+  position:absolute;
+  inset: 35px 4%;
+  border-radius: 22px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  box-shadow:
+    0 0 0 1px rgba(124,58,237,0.08),
+    0 0 26px rgba(124,58,237,0.10);
+  z-index: 0;
+}
+
+section h2,
+section p,
+section div,
+section ul,
+section article{
+  position: relative;
+  z-index: 1;
+}
+
+/* Inner padding */
+section h2,
+section p{
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* =========================
+   SECTION HEADINGS & TEXT
+========================= */
+section h2{
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+section p{
+  color: var(--muted);
+  max-width: 75ch;
+  margin-bottom: 14px;
+}
+
+/* =========================
+   ABOUT (PHOTO + TEXT)
+========================= */
+.about-content{
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr;
+  gap: 24px;
+  padding: 0 24px 40px;
+  align-items: center;
+}
+
+.about-photo{
+  display: flex;
+  justify-content: center;
+}
+
+.about-photo img{
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.04);
+  box-shadow:
+    0 0 0 2px rgba(124,58,237,0.18),
+    0 0 24px rgba(124,58,237,0.28);
+}
+
+.about-text p{
+  margin-bottom: 14px;
+}
+
+/* =========================
+   SKILLS
+========================= */
+.chips{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 0 24px 40px;
+}
+
+.chip{
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.04);
+  transition: 0.2s ease;
+}
+
+.chip:hover{
+  color: var(--text);
+  border-color: rgba(34,211,238,0.6);
+  box-shadow:
+    0 0 0 1px rgba(34,211,238,0.15),
+    0 0 20px rgba(34,211,238,0.25);
+  transform: translateY(-2px);
+}
+
+/* =========================
+   PROJECTS
+========================= */
+.projects-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 0 24px 40px;
+}
+
+.project-card{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255,255,255,0.04);
+  padding: 18px;
+  box-shadow:
+    0 0 0 1px rgba(124,58,237,0.06),
+    0 0 22px rgba(124,58,237,0.08);
+}
+
+.project-list{
+  list-style: disc;
+  padding-left: 18px;
+  color: var(--muted);
+  margin-bottom: auto;
+}
+
+/* =========================
+   EDUCATION
+========================= */
+.edu-card{
+  margin: 0 24px 40px;
+  padding: 18px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.04);
+  box-shadow:
+    0 0 0 1px rgba(34,211,238,0.06),
+    0 0 22px rgba(34,211,238,0.08);
+}
+
+.edu-meta{
+  color: var(--muted);
+}
+
+/* =========================
+   CONTACT
+========================= */
+#contact a{
+  color: var(--neon-cyan);
+  border-bottom: 1px dashed rgba(34,211,238,0.4);
+}
+
+#contact a:hover{
+  border-bottom-color: rgba(34,211,238,0.85);
+}
+/* =========================
+   ACTIVE NAV LINK
+========================= */
+nav a.active{
+  color: var(--text);
+  background: rgba(255,255,255,0.06);
+  box-shadow:
+    0 0 0 1px rgba(124,58,237,0.2),
+    0 0 20px rgba(124,58,237,0.25);
+}
+/* =========================
+   SCROLL REVEAL ANIMATION
+========================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* =========================
+   MOBILE NAVBAR (HAMBURGER)
+========================= */
+.nav-toggle{
+  display: none; /* hidden on desktop */
+  margin-left: auto;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.04);
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.nav-links{
+  display: flex;
+  gap: 18px;
+  margin-left: 6px;
+}
+
+/* Mobile behavior */
+@media (max-width: 900px){
+  .nav-toggle{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-links{
+    display: none;
+    position: absolute;
+    right: 16px;
+    top: 60px;
+    width: min(260px, 90vw);
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+    border-radius: 16px;
+    border: 1px solid var(--line);
+    background: rgba(11,15,26,0.92);
+    box-shadow:
+      0 0 0 1px rgba(34,211,238,0.08),
+      0 0 22px rgba(34,211,238,0.12);
+  }
+
+  .nav-links a{
+    padding: 10px 12px;
+  }
+
+  header.menu-open .nav-links{
+    display: flex;
+  }
+
+  /* keep logo left */
+  .nav-logo{
+    margin-right: auto;
+  }
+}
+/* Typing cursor */
+#typing::after{
+  content: "▋";
+  margin-left: 4px;
+  color: var(--neon-cyan);
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink{
+  50% { opacity: 0; }
+}
+
+
+/* Respect accessibility (reduced motion) */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px){
+  .hero-content{
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-photo{
+    margin-top: 16px;
+  }
+
+  .hero-photo img{
+    width: 250px;
+    height: 2500px;
+  }
+
+  .about-content{
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .projects-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px){
+  nav{
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  main,
+  section{
+    padding: 70px 16px;
+  }
+
+  section::before{
+    inset: 28px 4%;
+  }
+}
+
