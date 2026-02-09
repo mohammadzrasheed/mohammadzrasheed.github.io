@@ -307,8 +307,8 @@ section h2{
 
   /* 🔥 FIX: smaller hero photo on mobile */
   .hero-photo img{
-    width: 110px;
-    height: 110px;
+    width: 180px;
+    height: 180px;
   }
 
   .about-content{
@@ -320,5 +320,6 @@ section h2{
     grid-template-columns: 1fr;
   }
 }
+
 
 
