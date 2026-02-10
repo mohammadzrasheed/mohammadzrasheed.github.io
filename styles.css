@@ -16,15 +16,9 @@
 /* =========================
    RESET & BASE
 ========================= */
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+*{ margin:0; padding:0; box-sizing:border-box; }
 
-html{
-  scroll-behavior: smooth;
-}
+html{ scroll-behavior:smooth; }
 
 body{
   font-family: Arial, Helvetica, sans-serif;
@@ -36,13 +30,7 @@ body{
   line-height: 1.6;
 }
 
-/* =========================
-   GLOBAL LINKS
-========================= */
-a{
-  color: inherit;
-  text-decoration: none;
-}
+a{ color: inherit; text-decoration: none; }
 
 /* =========================
    NAVBAR
@@ -57,6 +45,7 @@ header{
 }
 
 nav{
+  position: relative; /* ✅ IMPORTANT for mobile dropdown positioning */
   max-width: 1100px;
   margin: auto;
   padding: 14px 22px;
@@ -151,6 +140,9 @@ main#home{
   margin-top: 14px;
   border-radius: 999px;
   background: linear-gradient(90deg, var(--neon-purple), var(--neon-cyan));
+  box-shadow:
+    0 0 18px rgba(124,58,237,0.25),
+    0 0 18px rgba(34,211,238,0.18);
 }
 
 .hero-photo{
@@ -159,14 +151,22 @@ main#home{
 }
 
 .hero-photo img{
-  width: 250px;
-  height: 250px;
+  width: 220px;
+  height: 220px;
   object-fit: cover;
   border-radius: 16px;
   border: 1px solid var(--line);
   box-shadow:
     0 0 0 1px rgba(124,58,237,0.2),
-    0 0 18px rgba(124,58,237,0.25);
+    0 0 22px rgba(124,58,237,0.22);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-photo img:hover{
+  transform: translateY(-3px);
+  box-shadow:
+    0 0 0 1px rgba(34,211,238,0.22),
+    0 0 26px rgba(34,211,238,0.25);
 }
 
 /* =========================
@@ -183,6 +183,9 @@ section::before{
   border-radius: 22px;
   background: var(--panel);
   border: 1px solid var(--line);
+  box-shadow:
+    0 0 0 1px rgba(124,58,237,0.08),
+    0 0 26px rgba(124,58,237,0.10);
   z-index: 0;
 }
 
@@ -191,10 +194,17 @@ section *{
   z-index: 1;
 }
 
+/* ✅ IMPORTANT FIX: give ALL section text padding so it stays inside the glass box */
 section h2{
   font-size: 32px;
   margin-bottom: 16px;
   padding: 0 24px;
+}
+
+section p{
+  padding: 0 24px;
+  color: var(--muted);
+  margin-bottom: 12px;
 }
 
 /* =========================
@@ -208,6 +218,11 @@ section h2{
   align-items: center;
 }
 
+.about-photo{
+  display:flex;
+  justify-content:center;
+}
+
 .about-photo img{
   width: 180px;
   height: 180px;
@@ -217,10 +232,18 @@ section h2{
   box-shadow:
     0 0 0 2px rgba(124,58,237,0.18),
     0 0 24px rgba(124,58,237,0.28);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.about-photo img:hover{
+  transform: translateY(-3px);
+  box-shadow:
+    0 0 0 2px rgba(34,211,238,0.22),
+    0 0 26px rgba(34,211,238,0.25);
 }
 
 /* =========================
-   SKILLS
+   SKILLS (more creative)
 ========================= */
 .chips{
   display: flex;
@@ -235,10 +258,21 @@ section h2{
   font-size: 14px;
   color: var(--muted);
   border: 1px solid var(--line);
+  background: rgba(255,255,255,0.03);
+  transition: 0.2s ease;
+}
+
+.chip:hover{
+  color: var(--text);
+  transform: translateY(-2px);
+  border-color: rgba(34,211,238,0.55);
+  box-shadow:
+    0 0 0 1px rgba(34,211,238,0.12),
+    0 0 18px rgba(34,211,238,0.18);
 }
 
 /* =========================
-   PROJECTS
+   PROJECTS (fixed + equal feel)
 ========================= */
 .projects-grid{
   display: grid;
@@ -248,10 +282,38 @@ section h2{
 }
 
 .project-card{
+  display:flex;
+  flex-direction: column;
   border: 1px solid var(--line);
   border-radius: 18px;
   padding: 18px;
   background: rgba(255,255,255,0.04);
+  box-shadow:
+    0 0 0 1px rgba(124,58,237,0.06),
+    0 0 22px rgba(124,58,237,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover{
+  transform: translateY(-4px);
+  box-shadow:
+    0 0 0 1px rgba(34,211,238,0.16),
+    0 0 26px rgba(34,211,238,0.18);
+}
+
+.project-list{
+  padding-left: 18px;
+  color: var(--muted);
+  margin-top: 10px;
+  margin-bottom: auto; /* pushes “links” line down */
+}
+
+.project-list li{ margin-bottom: 6px; }
+
+.project-links{
+  margin-top: 14px;
+  font-size: 14px;
+  color: var(--muted);
 }
 
 /* =========================
@@ -263,49 +325,90 @@ section h2{
   border-radius: 18px;
   border: 1px solid var(--line);
   background: rgba(255,255,255,0.04);
+  box-shadow:
+    0 0 0 1px rgba(34,211,238,0.06),
+    0 0 22px rgba(34,211,238,0.08);
 }
 
 /* =========================
-   CONTACT
+   CONTACT (inside box + nicer)
 ========================= */
 #contact a{
   color: var(--neon-cyan);
+  border-bottom: 1px dashed rgba(34,211,238,0.35);
 }
+#contact a:hover{
+  border-bottom-color: rgba(34,211,238,0.8);
+}
+.social-link{
+  display: inline-block;
+  margin-top: 8px;
+  padding: 8px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(34,211,238,0.4);
+  color: var(--neon-cyan);
+  transition: 0.2s ease;
+}
+
+.social-link:hover{
+  background: rgba(34,211,238,0.08);
+  box-shadow: 0 0 18px rgba(34,211,238,0.25);
+}
+/* =========================
+   DOWNLOAD CV BUTTON
+========================= */
+.cv-link{
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(124,58,237,0.5);
+  color: var(--text);
+  background: rgba(124,58,237,0.12);
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.cv-link:hover{
+  background: rgba(34,211,238,0.15);
+  border-color: rgba(34,211,238,0.7);
+  box-shadow:
+    0 0 0 1px rgba(34,211,238,0.25),
+    0 0 22px rgba(34,211,238,0.35);
+  transform: translateY(-2px);
+}
+
 
 /* =========================
    MOBILE
 ========================= */
 @media (max-width: 900px){
-  .nav-toggle{
-    display: inline-flex;
-  }
+  .nav-toggle{ display: inline-flex; }
 
   .nav-links{
     display: none;
     position: absolute;
-    right: 16px;
-    top: 60px;
+    right: 12px;
+    top: 58px;
     flex-direction: column;
+    gap: 8px;
     background: rgba(11,15,26,0.95);
     padding: 12px;
     border-radius: 16px;
     border: 1px solid var(--line);
+    width: min(260px, 90vw);
   }
 
-  header.menu-open .nav-links{
-    display: flex;
-  }
+  header.menu-open .nav-links{ display: flex; }
 
   .hero-content{
     grid-template-columns: 1fr;
     text-align: center;
   }
 
-  .hero-photo{
-    margin-top: 12px;
-  }
+  .hero-photo{ margin-top: 12px; }
 
-  /* 🔥 FIX: smaller hero photo on mobile */
+  /* Mobile hero photo size (you can change here) */
   .hero-photo img{
     width: 180px;
     height: 180px;
@@ -320,6 +423,13 @@ section h2{
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 480px){
+  section::before{ inset: 28px 4%; }
+  section h2, section p{ padding-left: 18px; padding-right: 18px; }
+  .about-content, .chips, .projects-grid{ padding-left: 18px; padding-right: 18px; }
+}
+
 
 
 
