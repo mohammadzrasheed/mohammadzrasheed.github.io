@@ -1,15 +1,18 @@
-
+// ============================
+// ACTIVE NAV LINK ON SCROLL
+// ============================
 const sections = document.querySelectorAll("main, section");
 const navLinks = document.querySelectorAll("nav a");
 
 window.addEventListener("scroll", () => {
   let currentSection = "";
+  const y = window.scrollY;
 
   sections.forEach(section => {
     const sectionTop = section.offsetTop - 120;
     const sectionHeight = section.offsetHeight;
 
-    if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+    if (y >= sectionTop && y < sectionTop + sectionHeight) {
       currentSection = section.getAttribute("id");
     }
   });
@@ -23,6 +26,9 @@ window.addEventListener("scroll", () => {
 });
 
 
+// ============================
+// SCROLL REVEAL (FADE IN SECTIONS)
+// ============================
 const revealTargets = document.querySelectorAll("main#home, section");
 revealTargets.forEach(el => el.classList.add("reveal"));
 
@@ -41,6 +47,9 @@ const revealObserver = new IntersectionObserver(
 revealTargets.forEach(el => revealObserver.observe(el));
 
 
+// ============================
+// MOBILE NAV MENU TOGGLE
+// ============================
 const headerEl = document.querySelector("header");
 const toggleBtn = document.querySelector(".nav-toggle");
 const linksBox = document.querySelector(".nav-links");
@@ -62,20 +71,26 @@ if (toggleBtn && headerEl && linksBox) {
     isOpen ? closeMenu() : openMenu();
   });
 
+  // close when clicking a link
   linksBox.querySelectorAll("a").forEach(a => {
     a.addEventListener("click", closeMenu);
   });
 
+  // close on outside click
   document.addEventListener("click", (e) => {
     if (!headerEl.contains(e.target)) closeMenu();
   });
 
+  // close on ESC
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeMenu();
   });
 }
 
 
+// ============================
+// TYPING EFFECT (HERO) - FIXED
+// ============================
 const typingEl = document.getElementById("typing");
 
 if (typingEl) {
@@ -89,18 +104,17 @@ if (typingEl) {
   let i = 0;
   let deleting = false;
 
- 
+  // Never allow empty text (prevents layout shift)
   const safeSetText = (value) => {
     typingEl.textContent = value.length ? value : " ";
   };
 
-  
+  // Set initial space immediately
   safeSetText(" ");
 
   function tick() {
     const text = phrases[p];
-    const current = text.slice(0, i);
-    safeSetText(current);
+    safeSetText(text.slice(0, i));
 
     if (!deleting) {
       i++;
@@ -113,7 +127,7 @@ if (typingEl) {
     } else {
       i--;
       if (i <= 0) {
-        i = 0; 
+        i = 0;
         deleting = false;
         p = (p + 1) % phrases.length;
         setTimeout(tick, 300);
@@ -123,6 +137,6 @@ if (typingEl) {
     }
   }
 
-  tick();
+  tick(); 
 }
 
