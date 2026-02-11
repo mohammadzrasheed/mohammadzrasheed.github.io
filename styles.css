@@ -518,6 +518,11 @@ section p{
 /* =========================
    MOBILE
 ========================= */
+@media (max-width: 480px){
+  #why-me h2{
+    font-size: 24px;
+  }
+}
 @media (max-width: 900px){
   .nav-toggle{ display: inline-flex; }
 
@@ -580,6 +585,7 @@ section p{
   section h2, section p{ padding-left: 18px; padding-right: 18px; }
   .about-content, .chips, .projects-grid{ padding-left: 18px; padding-right: 18px; }
 }
+
 
 
 
