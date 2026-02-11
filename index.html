@@ -8,192 +8,429 @@
 </head>
 <body>
 
+ 
+  <svg aria-hidden="true" style="position:absolute; width:0; height:0; overflow:hidden;">
+    <!-- General -->
+    <symbol id="i-user" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 12a4.5 4.5 0 1 0-4.5-4.5A4.5 4.5 0 0 0 12 12Zm0 2c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5Z"/>
+    </symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 2l1.6 6.2L20 10l-6.4 1.8L12 18l-1.6-6.2L4 10l6.4-1.8L12 2Z"/>
+    </symbol>
+    <symbol id="i-skills" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M4 19h16v2H4v-2Zm2-4h12v2H6v-2Zm-2-4h16v2H4v-2Zm2-4h12v2H6V7Z"/>
+    </symbol>
+    <symbol id="i-project" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M10 4l2 2h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h6Zm10 6H4v8h16v-8Z"/>
+    </symbol>
+    <symbol id="i-edu" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3Zm-6.5 9.2V16c0 1.66 3.13 3 6.5 3s6.5-1.34 6.5-3v-3.8l-6.5 3.55-6.5-3.55Z"/>
+    </symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"/>
+    </symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.3 21 3 13.7 3 4a1 1 0 0 1 1-1h3.4a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1l-2.18 2.2Z"/>
+    </symbol>
+    <symbol id="i-link" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M10 13a5 5 0 0 1 0-7l1-1a5 5 0 0 1 7 7l-1 1a1 1 0 0 1-1.4-1.4l1-1a3 3 0 1 0-4.2-4.2l-1 1a3 3 0 0 0 0 4.2A1 1 0 0 1 10 13Zm4-2a1 1 0 0 1 0 1.4 3 3 0 0 0 0 4.2l1 1a3 3 0 1 0 4.2-4.2l-1-1a1 1 0 0 1 1.4-1.4l1 1a5 5 0 0 1-7 7l-1-1a5 5 0 0 1 0-7A1 1 0 0 1 14 11Z"/>
+    </symbol>
+    <symbol id="i-download" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 3a1 1 0 0 1 1 1v9.59l2.3-2.29a1 1 0 1 1 1.4 1.42l-4 3.99a1 1 0 0 1-1.4 0l-4-3.99a1 1 0 1 1 1.4-1.42L11 13.59V4a1 1 0 0 1 1-1ZM5 19a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1Z"/>
+    </symbol>
+  </svg>
+
   <!-- NAVBAR -->
   <header>
-   <nav>
-  <a class="nav-logo" href="#home">MR</a>
+    <nav>
+      <a class="nav-logo" href="#home" aria-label="Go to home">MR</a>
 
-  <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
-    ☰
-  </button>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        ☰
+      </button>
 
-  <div class="nav-links">
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#education">Education</a>
-    <a href="#contact">Contact</a>
-  </div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
     </nav>
-
   </header>
 
- <!-- HERO -->
-    <main id="home">
-  <div class="hero-content">
-    <div class="hero-text">
-      <h1>Mohammad Rashid</h1>
-      <p>
-        Computer Science Graduate • Software & Web Developer<br>
-        Beirut, Lebanon
-        <P><span id="typing"></span><br></P>
-      </p>
+  <!-- HERO -->
+  <main id="home">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Mohammad Rashid</h1>
+        <div class="hero-badge">
+           Available for Internship / Junior Developer Role
+        </div>
+        <p>
+          Computer Science Graduate • Software & Web Developer<br>
+          Beirut, Lebanon
+        </p>
+
+       
+
+        <!-- Professional summary points (no size changes) -->
+        <p style="margin-top:10px;">
+          <svg class="icon" width="18" height="18"><use href="#i-spark"></use></svg>
+          Focused on clean, reliable solutions: full-stack web apps, databases, and IoT systems.
+        </p>
+        <p>
+          <svg class="icon" width="18" height="18"><use href="#i-spark"></use></svg>
+          Strong in teamwork, communication, and delivering on deadlines.
+        </p>
+        
+         <!-- Professional one-liner for companies -->
+        <p class="typing-line">
+        <span id="typing"></span><span class="cursor" aria-hidden="true">|</span>
+        </p>
+      </div>
+
+      <div class="hero-photo">
+        <img src="assets/images/photo1.png" alt="Mohammad Rashid">
+      </div>
     </div>
+  </main>
 
-    <div class="hero-photo">
-      <img src="assets/images/photo1.png" alt="Mohammad Rashid">
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>
+      <svg class="icon" width="22" height="22"><use href="#i-user"></use></svg>
+      About
+    </h2>
+
+    <div class="about-content">
+      <div class="about-photo">
+        <img src="assets/images/photo2.jpg" alt="Mohammad Rashid">
+      </div>
+
+      <div class="about-text">
+        <p>
+          I am a motivated Computer Science graduate with a strong foundation in
+          software development, web technologies, and database systems. I build full-stack
+          applications with clean UI, solid backend logic, and structured databases.
+        </p>
+
+        <p>
+          I’m interested in full-stack development, IoT systems, and applied machine learning.
+          I enjoy solving problems, designing efficient systems, and delivering reliable,
+          user-focused applications while continuously improving my skills.
+        </p>
+
+        <!-- Professional “for companies” style -->
+        <p>
+          <strong>What I bring:</strong> fast learning, strong responsibility, clean code practices,
+          and the ability to work with teams to deliver real results.
+        </p>
+      </div>
     </div>
-  </div>
-</main>
-
-
-    <!-- ABOUT -->
-    <section id="about">
-  <h2>About</h2>
-
-  <div class="about-content">
-    <div class="about-photo">
-      <img src="assets/images/photo2.jpg" alt="Mohammad Rashid">
-    </div>
-
-    <div class="about-text">
-      <p>
-        I am a motivated Computer Science graduate with a strong foundation in
-        software development, web technologies, and database systems. I have
-        hands-on experience building full-stack web applications and real-world
-        systems that integrate software with hardware.
-      </p>
-
-      <p>
-        My interests include full-stack development, IoT systems, and applied
-        machine learning. I enjoy solving complex problems, designing efficient
-        systems, and developing reliable, user-focused applications while
-        continuously improving my technical skills.
-      </p>
-    </div>
-  </div>
-</section>
-
- 
-
+  </section>
 
   <!-- SKILLS -->
   <section id="skills">
-  <h2>Skills</h2>
+    <h2>
+      <svg class="icon" width="22" height="22"><use href="#i-skills"></use></svg>
+      Skills
+    </h2>
 
-  <div class="chips">
-    <span class="chip">Java</span>
-    <span class="chip">Python</span>
-    <span class="chip">C++</span>
-    <span class="chip">HTML</span>
-    <span class="chip">REACT</span>
-    <span class="chip">CSS</span>
-    <span class="chip">JavaScript</span>
-    <span class="chip">PHP (Basics)</span>
-    <span class="chip">MySQL</span>
-    <span class="chip">Database Design</span>
-    <span class="chip">Query Optimization</span>
-    <span class="chip">IoT / Embedded Systems</span>
-    <span class="chip">Machine Learning (Interest)</span>
-    <span class="chip">CCNA: Introduction to Networks</span>
+    <!-- Chips (kept) -->
+    <div class="chips">
+      <span class="chip">Java</span>
+      <span class="chip">HTML</span>
+      <span class="chip">CSS</span>
+      <span class="chip">JavaScript</span>
+      <span class="chip">React</span>
+      <span class="chip">MySQL</span>
+      <span class="chip">PHP (Basics)</span>
+      <span class="chip">Database Design</span>
+      <span class="chip">Query Optimization</span>
+      <span class="chip">IoT / Embedded Systems</span>
+      <span class="chip">Machine Learning (Interest)</span>
+      <span class="chip">CCNA: Introduction to Networks</span>
     </div>
-    </section>
 
+    <!-- NEW: Skills line charts (percentages) -->
+    <div class="skills-charts">
+      <div class="skills-charts-grid">
+
+        <!-- Programming -->
+        <div class="skill-chart-card">
+          <h3>
+            <svg class="icon" width="20" height="20"><use href="#i-skills"></use></svg>
+            Programming
+          </h3>
+
+          <div class="skill-row">
+            <div class="top"><span class="name">HTML</span><span class="pct">90%</span></div>
+            <div class="skill-bar"><span style="--val:90%;"></span></div>
+          </div>
+
+          <div class="skill-row">
+            <div class="top"><span class="name">CSS</span><span class="pct">85%</span></div>
+            <div class="skill-bar"><span style="--val:85%;"></span></div>
+          </div>
+
+          <div class="skill-row">
+            <div class="top"><span class="name">JavaScript</span><span class="pct">80%</span></div>
+            <div class="skill-bar"><span style="--val:80%;"></span></div>
+          </div>
+
+          <div class="skill-row">
+            <div class="top"><span class="name">React</span><span class="pct">75%</span></div>
+            <div class="skill-bar"><span style="--val:75%;"></span></div>
+          </div>
+
+          <div class="skill-row">
+            <div class="top"><span class="name">Java</span><span class="pct">78%</span></div>
+            <div class="skill-bar"><span style="--val:78%;"></span></div>
+          </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="skill-chart-card">
+          <h3>
+            <svg class="icon" width="20" height="20"><use href="#i-skills"></use></svg>
+            Tools & Software
+          </h3>
+
+          <div class="skill-row">
+            <div class="top"><span class="name">VS Code</span><span class="pct">95%</span></div>
+            <div class="skill-bar"><span style="--val:95%;"></span></div>
+          </div>
+
+          <div class="skill-row">
+            <div class="top"><span class="name">Figma</span><span class="pct">85%</span></div>
+            <div class="skill-bar"><span style="--val:85%;"></span></div>
+          </div>
+
+          <div class="skill-row">
+            <div class="top"><span class="name">MS Office</span><span class="pct">90%</span></div>
+            <div class="skill-bar"><span style="--val:90%;"></span></div>
+          </div>
+
+          <div class="skill-row">
+            <div class="top"><span class="name">GitHub</span><span class="pct">85%</span></div>
+            <div class="skill-bar"><span style="--val:85%;"></span></div>
+          </div>
+
+          <div class="skill-row">
+            <div class="top"><span class="name">Jira</span><span class="pct">70%</span></div>
+            <div class="skill-bar"><span style="--val:70%;"></span></div>
+          </div>
+
+          <div class="skill-row">
+            <div class="top"><span class="name">draw.io</span><span class="pct">88%</span></div>
+            <div class="skill-bar"><span style="--val:88%;"></span></div>
+          </div>
+        </div>
+
+        <!-- Soft Skills -->
+        <div class="skill-chart-card">
+          <h3>
+            <svg class="icon" width="20" height="20"><use href="#i-skills"></use></svg>
+            Soft Skills
+          </h3>
+
+          <div class="skill-row">
+            <div class="top"><span class="name">Problem Solving</span><span class="pct">90%</span></div>
+            <div class="skill-bar"><span style="--val:90%;"></span></div>
+          </div>
+
+          <div class="skill-row">
+            <div class="top"><span class="name">Teamwork</span><span class="pct">88%</span></div>
+            <div class="skill-bar"><span style="--val:88%;"></span></div>
+          </div>
+
+          <div class="skill-row">
+            <div class="top"><span class="name">Communication</span><span class="pct">85%</span></div>
+            <div class="skill-bar"><span style="--val:85%;"></span></div>
+          </div>
+
+          <div class="skill-row">
+            <div class="top"><span class="name">Quick Learner</span><span class="pct">92%</span></div>
+            <div class="skill-bar"><span style="--val:92%;"></span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <!-- PROJECTS -->
   <section id="projects">
-  <h2>Projects</h2>
+    <h2>
+      <svg class="icon" width="22" height="22"><use href="#i-project"></use></svg>
+      Projects
+    </h2>
 
-  <div class="projects-grid">
-    <article class="project-card">
-      <h3>Car Rental Web Application (Full-Stack)</h3>
+    <div class="projects-grid">
+      <article class="project-card">
+        <h3>Car Rental Web Application (Full-Stack)</h3>
+        <p>
+          A full-stack car rental platform that allows users to browse vehicles,
+          make reservations, and manage bookings. Includes an admin dashboard for
+          vehicle management and booking control, with database-driven availability.
+        </p>
+        <ul class="project-list">
+          <li><strong>Frontend:</strong> HTML, CSS, JavaScript (Responsive UI)</li>
+          <li><strong>Backend:</strong> Authentication, booking logic, payment workflow</li>
+          <li><strong>Database:</strong> Users, Cars, Reservations, Availability</li>
+        </ul>
+
+        <div class="project-links">
+          <span class="project-note">Links will be added later (Live / Code)</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <h3>IoT Water Leakage & Fire Detection System</h3>
+        <p>
+          Real-world sensing system designed to detect water leakage and fire hazards.
+          Provides real-time monitoring and status display, with alert logic and testing
+          in real scenarios.
+        </p>
+        <ul class="project-list">
+          <li><strong>Focus:</strong> Hardware–software integration</li>
+          <li><strong>Features:</strong> Real-time monitoring, alerts, debugging & testing</li>
+          <li><strong>Skills:</strong> Embedded systems, sensors, system reliability</li>
+        </ul>
+
+        <div class="project-links">
+          <span class="project-note">Links will be added later (Demo / Details)</span>
+        </div>
+      </article>
+    </div>
+  </section>
+  <!-- WHY WORK WITH ME -->
+<section id="why-me">
+  <h2>
+    <svg class="icon" width="22" height="22">
+      <use href="#i-spark"></use>
+    </svg>
+    Why Work With Me
+  </h2>
+
+  <div class="why-grid">
+
+    <div class="why-card">
+      <h3>Strong Problem Solver</h3>
       <p>
-        A full-stack car rental platform that allows users to browse vehicles,
-        make reservations, and manage bookings. Includes an admin dashboard for
-        vehicle management and booking control, with database-driven availability.
+        I approach challenges analytically and break complex problems into
+        structured, efficient solutions using clean logic and well-designed systems.
       </p>
-      <ul class="project-list">
-        <li><strong>Frontend:</strong> HTML, CSS, JavaScript (Responsive UI)</li>
-        <li><strong>Backend:</strong> Authentication, booking logic, payment workflow</li>
-        <li><strong>Database:</strong> Users, Cars, Reservations, Availability</li>
-      </ul>
+    </div>
 
-      <!-- We will add Live/Code links later when you give them -->
-      <div class="project-links">
-        <span class="project-note">Links will be added later (Live / Code)</span>
-      </div>
-    </article>
-
-    <article class="project-card">
-      <h3>IoT Water Leakage & Fire Detection System</h3>
+    <div class="why-card">
+      <h3>Clean & Maintainable Code</h3>
       <p>
-        Real-world sensing system designed to detect water leakage and fire hazards.
-        Provides real-time monitoring and status display (“No Errors – All Safe”),
-        with alert logic and testing in real scenarios.
+        I focus on writing organized, readable, and scalable code that follows
+        best practices and supports long-term project growth.
       </p>
-      <ul class="project-list">
-        <li><strong>Focus:</strong> Hardware–software integration</li>
-        <li><strong>Features:</strong> Real-time monitoring, alerts, debugging & testing</li>
-        <li><strong>Skills:</strong> Embedded systems, sensors, system reliability</li>
-      </ul>
+    </div>
 
-      <div class="project-links">
-        <span class="project-note">Links will be added later (Demo / Details)</span>
-      </div>
-    </article>
+    <div class="why-card">
+      <h3>Team-Oriented & Reliable</h3>
+      <p>
+        Comfortable collaborating within teams, communicating clearly, and
+        delivering tasks on time with full responsibility.
+      </p>
+    </div>
+
+    <div class="why-card">
+      <h3>Fast Learner</h3>
+      <p>
+        I adapt quickly to new technologies, frameworks, and business
+        requirements, continuously improving my technical expertise.
+      </p>
+    </div>
+
   </div>
 </section>
-
 
   <!-- EDUCATION -->
   <section id="education">
-  <h2>Education</h2>
+    <h2>
+      <svg class="icon" width="22" height="22"><use href="#i-edu"></use></svg>
+      Education
+    </h2>
 
-  <div class="edu-card">
-    <h3>Lebanese International University (LIU)</h3>
-    <p class="edu-meta">BS in Computer Science • Sour, Lebanon</p>
-    <p class="edu-meta">Sep 2023 – Jan 2026</p>
+    <div class="edu-card">
+      <h3>Lebanese International University (LIU)</h3>
+      <p class="edu-meta">BS in Computer Science • Sour, Lebanon</p>
+      <p class="edu-meta">Sep 2023 – Jan 2026</p>
 
-    <h4>Relevant Coursework</h4>
-    <p class="edu-text">
-      Robotics, Information System Design, Machine Learning, Computer Architecture,
-      Digital Logic, Data Structures & Algorithms, Object-Oriented Programming,
-      DBMS, Web Development, Software Engineering, Operating Systems, Networking, AI.
-    </p>
-  </div>
-</section>
+      <h4>Relevant Coursework</h4>
+      <p class="edu-text">
+        Robotics, Information System Design, Machine Learning, Computer Architecture,
+        Digital Logic, Data Structures & Algorithms, Object-Oriented Programming,
+        DBMS, Web Development, Software Engineering, Operating Systems, Networking, AI.
+      </p>
+    </div>
+  </section>
 
   <!-- CONTACT -->
   <section id="contact">
-  <h2>Contact</h2>
+  <h2>
+    <svg class="icon" width="22" height="22">
+      <use href="#i-link"></use>
+    </svg>
+    Contact
+  </h2>
 
-  <p>
-    Email:
-    <a href="mailto:mohammadzrashid4@gmail.com">
-      mohammadzrashid4@gmail.com
-    </a>
-  </p>
+  <div class="contact-grid">
 
-  <p>
-    Phone:
-    <a href="tel:+96176575289">
-      +961 76 575 289
-    </a>
-  </p>
-  <p>
-  LinkedIn:
-  <a href="https://www.linkedin.com/in/mohammad-rashid-271a9a3ab?trk=contact-info" target="_blank">
-    🔗 LinkedIn Profile
-  </a>
-</p>
-<p>
-  <a class="cv-link" href="Mohammad Rashid_2026.pdf" target="_blank" download>
-    📄 Download CV
-  </a>
-</p>
+    <!-- LEFT SIDE -->
+    <div class="contact-left">
 
+      <p>
+        <svg class="icon" width="18" height="18"><use href="#i-mail"></use></svg>
+        Email:
+        <a href="mailto:mohammadzrashid4@gmail.com">
+          mohammadzrashid4@gmail.com
+        </a>
+      </p>
+
+      <p>
+        <svg class="icon" width="18" height="18"><use href="#i-phone"></use></svg>
+        Phone:
+        <a href="tel:+96176575289">
+          +961 76 575 289
+        </a>
+      </p>
+
+      <p>
+        <svg class="icon" width="18" height="18"><use href="#i-link"></use></svg>
+        LinkedIn:
+        <a href="https://www.linkedin.com/in/mohammad-rashid-271a9a3ab" target="_blank">
+          Mohammad Rashid
+        </a>
+      </p>
+
+      <p>
+        <a class="cv-link" href="Mohammad Rashid_2026.pdf" target="_blank" download>
+          Download CV
+        </a>
+      </p>
+
+    </div>
+
+  
+    <div class="contact-right">
+      <strong>Mohammad Rashid</strong><br>
+      Software & Web Developer<br>
+      Beirut, Lebanon
+
+      <div class="contact-copy">
+        © 2026 Mohammad Rashid. All rights reserved.
+      </div>
+    </div>
+
+  </div>
 </section>
-
 
   <script src="script.js"></script>
 </body>
