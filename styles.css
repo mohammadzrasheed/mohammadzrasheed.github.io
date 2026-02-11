@@ -338,16 +338,7 @@ section p{
   transform: translateY(-2px);
 }
 
-/* STRICT FIX: typing line never moves */
-.typing-line{
-  margin-top: 10px;
-  height: 24px;
-  line-height: 24px;
-  overflow: hidden;
-  color: var(--muted);
-  display: block;
-  padding: 0 24px;
-}
+
 
 #typing{
   display: inline-block;
